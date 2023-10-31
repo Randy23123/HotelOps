@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.util.Scanner;
+
 public class Employee {
     private long employeeId;
     private String name;
@@ -83,5 +85,23 @@ public class Employee {
 
     public void setOvertimeHours(double overtimeHours) {
         this.overtimeHours = overtimeHours;
+    }
+
+    public double calculationPayRoll(){
+        double regularPay = 0;
+        double overTimePay = 0;
+
+        if (regularHours){
+            regularPay = hoursWorked * payRate;
+        }else {
+            if (hoursWorked <= 40){
+                regularPay = hoursWorked * payRate;
+            }else {
+                regularPay = 40 * payRate;
+                overTimePay = (hoursWorked - 40) * (payRate * 1.5);
+            }
+        }
+        totalPay = regularPay + overTimePay;
+        return  totalPay;
     }
 }
