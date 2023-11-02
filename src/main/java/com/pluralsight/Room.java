@@ -7,6 +7,7 @@ public class Room {
     private boolean dirty;
     private boolean roomAvailable;
 
+
     public Room(double numberOfBeds, double price, boolean occupied, boolean dirty, boolean roomAvailable) {
         this.numberOfBeds = numberOfBeds;
         this.price = price;
@@ -55,6 +56,7 @@ public class Room {
     public void setAvailable(boolean roomAvailable) {
         this.roomAvailable = roomAvailable;
     }
+
     public void checkedIn(){
         if (isOccupied()){
             if (!isAvailable()){
